@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import contacts from "./contacts.json";
-import { RamdomActor } from "./components/RamdomActor";
 
 class App extends Component {
   render() {
+    const RamdomActor = () => {
+      const actor = contacts[Math.floor(Math.random() * contacts.length)];
+      contacts.concat(actor);
+      console.log(actor);
+    };
     return (
       <div className="App">
         <div className="container">
